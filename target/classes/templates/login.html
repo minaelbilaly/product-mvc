@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template1}">
+<head>
+    <title>Connexion</title>
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-header">Connexion</div>
+            <div class="card-body">
+                <div class="alert alert-danger" th:if="${param.error}">
+                    Nom d'utilisateur ou mot de passe incorrect.
+                </div>
+                <div class="alert alert-success" th:if="${param.logout}">
+                    Vous êtes déconnecté.
+                </div>
+                <form th:action="@{/login}" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Nom d'utilisateur</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mot de passe</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                </form>
+                <hr>
+                <small>Compte USER : user1 / 1234</small><br>
+                <small>Compte ADMIN : admin / 1234</small>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
