@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TP 3 — Gestion des produits
 
 ## Environnement
@@ -17,3 +18,6 @@
 - ADMIN : `admin` / `1234`
 
 La base H2 est en mémoire : les données sont réinitialisées à chaque redémarrage.
+=======
+# product-mvc
+>>>>>>> 21f3a64f6af00e12ed9930e1596123b8da973a48
