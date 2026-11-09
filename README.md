@@ -1050,33 +1050,6 @@ public class SecurityController {
 
 La liste affiche déjà les boutons d'administration seulement aux utilisateurs ayant le rôle `ADMIN`, grâce à `sec:authorize="hasRole('ADMIN')"`.
 
-### 10.7. Tests de la sécurité
-
-**Test 1 : accès sans connexion.** En ouvrant `http://localhost:8080/user/index`, je suis redirigé vers la page de connexion.
-
-![Figure 17 : Page de connexion](images/17-page-login.png)
-
-*Figure 17 : Page de connexion.*
-
-**Test 2 : connexion avec un utilisateur simple (`user1`).** La liste des produits est visible, mais **sans** le bouton **Supprimer** ni le menu **Nouveau produit**.
-
-![Figure 18 : Vue de l'utilisateur user1](images/18-vue-user1.png)
-
-*Figure 18 : Page des produits vue par l'utilisateur `user1` (rôle USER).*
-
-**Test 3 : accès interdit.** Avec `user1`, l'ouverture de `http://localhost:8080/admin/newProduct` affiche la page d'accès refusé.
-
-![Figure 19 : Accès refusé](images/19-acces-refuse.png)
-
-*Figure 19 : Page d'accès refusé pour `user1`.*
-
-**Test 4 : connexion avec l'administrateur (`admin`).** Tous les boutons sont visibles : ajout et suppression.
-
-![Figure 20 : Vue de l'administrateur](images/20-vue-admin.png)
-
-*Figure 20 : Page des produits vue par l'utilisateur `admin` (rôles USER et ADMIN).*
-
----
 
 # 11. Fonctionnalités supplémentaires
 
@@ -1145,7 +1118,8 @@ import org.springframework.data.domain.PageRequest;
 
 **Résultat :** en saisissant un mot dans le champ puis en cliquant sur **Rechercher**, seuls les produits dont le nom contient ce mot sont affichés.
 
-![Figure 21 : Recherche des produits](images/21-recherche.png)
+<img width="870" height="240" alt="image" src="https://github.com/user-attachments/assets/1a967dca-5f1b-47ea-87c2-f81aa25880ad" />
+
 
 *Figure 21 : Résultat de la recherche d'un produit par son nom.*
 
@@ -1195,9 +1169,7 @@ public String delete(@RequestParam(name = "id") Long id,
 | `new int[totalPages]` | Tableau utilisé par Thymeleaf pour créer un bouton par page. |
 | `th:class="... ? ... : ..."` | Met en évidence la page courante. |
 
-![Figure 22 : Pagination de la liste des produits](images/22-pagination.png)
 
-*Figure 22 : Liste des produits avec les boutons de pagination.*
 
 ### 11.3. Édition et mise à jour d'un produit
 
@@ -1288,13 +1260,6 @@ La méthode `save()` met à jour le produit, car l'identifiant existe déjà (il
 </a>
 ```
 
-![Figure 23 : Formulaire de modification](images/23-formulaire-edition.png)
-
-*Figure 23 : Formulaire de modification d'un produit (champs pré-remplis).*
-
-![Figure 24 : Produit modifié](images/24-produit-modifie.png)
-
-*Figure 24 : Liste des produits après la modification.*
 
 ### 11.4. Récapitulatif des fonctionnalités
 
