@@ -426,7 +426,8 @@ server.port=8080
 | `spring.jpa.show-sql=true` | Affiche les requêtes SQL dans le terminal. |
 | Lignes commentées | Permettent de passer à MySQL en les activant et en commentant la partie H2. |
 
-![Figure 5 : Configuration de la base de données](images/05-application-properties.png)
+<img width="539" height="113" alt="image" src="https://github.com/user-attachments/assets/f04408d3-c9d1-490a-a9a3-4d0ad2fb3671" />
+
 
 *Figure 5 : Fichier application.properties.*
 
@@ -481,7 +482,8 @@ public class ProductMvcApplication {
 
 **Résultat :** Au démarrage, quatre produits sont enregistrés, puis la liste complète et le produit n° 1 sont affichés dans le terminal.
 
-![Figure 6 : Test de la couche DAO dans le terminal](images/06-test-dao.png)
+<img width="926" height="663" alt="image" src="https://github.com/user-attachments/assets/6eb21df6-df13-49d3-9623-3e11b4166b7c" />
+
 
 *Figure 6 : Résultat du test de la couche DAO.*
 
@@ -529,8 +531,8 @@ public class SecurityConfig {
 | `csrf.disable()` | Désactive la protection CSRF (provisoire, pour les tests). |
 
 **Remarque :** cette configuration est **provisoire**. Elle sera remplacée à l'étape 10 par une vraie configuration de sécurité.
+<img width="771" height="662" alt="image" src="https://github.com/user-attachments/assets/bdbb5185-0f45-43f6-9fc7-08321f58a2cd" />
 
-![Figure 7 : Configuration de Spring Security sans protection](images/07-security-permitall.png)
 
 *Figure 7 : Classe SecurityConfig avec `permitAll()`.*
 
@@ -627,7 +629,8 @@ public class ProductController {
 | `BindingResult` | Contient les erreurs de validation éventuelles. |
 | `Model` | Transmet les données du contrôleur vers la vue. |
 
-![Figure 8 : Contrôleur ProductController](images/08-product-controller.png)
+<img width="792" height="660" alt="image" src="https://github.com/user-attachments/assets/f8542736-0b5e-40f6-a023-8e6702e7137b" />
+
 
 *Figure 8 : Classe ProductController.*
 
@@ -697,7 +700,8 @@ Pour que toutes les pages aient le même aspect, j'ai créé une **page template
 | `sec:authorize` | Affiche l'élément seulement si l'utilisateur a le rôle demandé. |
 | Classes `navbar`, `container`, `btn` | Classes Bootstrap pour la mise en forme. |
 
-![Figure 9 : Page template template1.html](images/09-template1.png)
+<img width="857" height="667" alt="image" src="https://github.com/user-attachments/assets/b4817baf-e4cb-4fbe-afd2-ae7dcd797b48" />
+
 
 *Figure 9 : Fichier template1.html.*
 
@@ -764,7 +768,10 @@ Pour que toutes les pages aient le même aspect, j'ai créé une **page template
 
 **Résultat :** En ouvrant `http://localhost:8080/user/index`, la liste des quatre produits s'affiche dans un tableau.
 
-![Figure 10 : Liste des produits](images/10-liste-produits.png)
+<img width="883" height="491" alt="image" src="https://github.com/user-attachments/assets/1cdf3707-48b1-4058-af83-72adf7919503" />
+<img width="1303" height="476" alt="image" src="https://github.com/user-attachments/assets/8f5f0ace-1fff-491a-900b-a351cdfa0514" />
+
+
 
 *Figure 10 : Page d'affichage de la liste des produits.*
 
@@ -774,11 +781,13 @@ Chaque ligne du tableau contient un bouton **Supprimer**. Il appelle l'URL `/adm
 
 **Remarque :** pour simplifier, la suppression est déclenchée par un lien (requête GET). Dans une application en production, une suppression devrait plutôt utiliser une requête POST, protégée par le jeton CSRF.
 
-![Figure 11 : Confirmation de la suppression](images/11-confirmation-suppression.png)
+<img width="1303" height="476" alt="image" src="https://github.com/user-attachments/assets/af0bb206-38dc-4541-9553-7df8738459bd" />
+
 
 *Figure 11 : Fenêtre de confirmation avant la suppression.*
 
-![Figure 12 : Liste après suppression](images/12-liste-apres-suppression.png)
+<img width="1271" height="413" alt="image" src="https://github.com/user-attachments/assets/c416258d-4c47-417b-97ad-f31b61536080" />
+
 
 *Figure 12 : Liste des produits après la suppression d'un produit.*
 
@@ -841,15 +850,18 @@ Chaque ligne du tableau contient un bouton **Supprimer**. Il appelle l'URL `/adm
 
 **Fonctionnement :** quand je clique sur **Enregistrer**, Spring crée l'objet `Product` à partir des valeurs saisies. L'annotation `@Valid` vérifie les contraintes (`@NotEmpty`, `@Size`, `@Min`). S'il y a des erreurs, le formulaire est réaffiché avec les messages. Sinon, le produit est enregistré.
 
-![Figure 13 : Formulaire d'ajout d'un produit](images/13-formulaire-ajout.png)
+<img width="983" height="494" alt="image" src="https://github.com/user-attachments/assets/55a6b436-b311-4a29-bdb9-1e71fdfd45e9" />
+
 
 *Figure 13 : Formulaire de saisie d'un nouveau produit.*
 
-![Figure 14 : Validation du formulaire](images/14-validation-formulaire.png)
+<img width="618" height="447" alt="image" src="https://github.com/user-attachments/assets/26916225-a959-41e4-ba87-f7f5b866af51" />
+
 
 *Figure 14 : Messages d'erreur affichés lorsque les données saisies sont invalides.*
 
-![Figure 15 : Produit ajouté](images/15-produit-ajoute.png)
+<img width="1036" height="470" alt="image" src="https://github.com/user-attachments/assets/f83820a9-d9c5-4b98-9b3e-8dffa2c02709" />
+
 
 *Figure 15 : Liste des produits après l'ajout d'un nouveau produit.*
 
@@ -941,9 +953,6 @@ public class SecurityConfig {
 | `accessDeniedPage("/notAuthorized")` | Page affichée quand un utilisateur n'a pas les droits. |
 | CSRF | Je n'ai plus désactivé la protection CSRF : Thymeleaf ajoute automatiquement le jeton dans les formulaires (`th:action`). |
 
-![Figure 16 : Configuration de Spring Security](images/16-security-config.png)
-
-*Figure 16 : Classe SecurityConfig (version finale).*
 
 ### 10.4. Contrôleur de sécurité
 
